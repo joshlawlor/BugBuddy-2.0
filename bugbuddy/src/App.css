@@ -1,9 +1,12 @@
 .App {
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #9a8617f8;
+  height: 100vh;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -33,6 +36,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(359deg);
   }
 }
