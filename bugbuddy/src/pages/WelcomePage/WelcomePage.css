@@ -1,10 +1,31 @@
 
 .welcomeBox{
-
     margin-top: 5vh;
     margin-left: 15px;
     margin-right: 15px;
     font-family: 'Press Start 2P', cursive;
+    height: 50vh;
+}
+
+.title {
+    margin-top: 1vh;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.logoBox{
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+
+.buttonBox {
+    margin-top: 7vh;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    display: flex;
+    justify-content: space-evenly;
 }
 
 

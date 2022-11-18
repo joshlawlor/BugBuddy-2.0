@@ -13,6 +13,8 @@ import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 //PAGES
 import PostsPage from './pages/PostsPage/PostsPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
+import LoginForm from './components/LoginForm/LoginForm'
+import SignUpForm from './components/SignUpForm/SignUpForm'
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
       <Routes>
         <Route path='/' element={<WelcomePage/>}/>
         <Route path='/posts' element={<PostsPage />}/>
+        <Route path='/login' element={<LoginForm/>}/>
+        <Route path='/signup' element={<SignUpForm/>}/>
       </Routes>
     </div>
   );
