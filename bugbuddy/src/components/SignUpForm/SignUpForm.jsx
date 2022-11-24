@@ -4,7 +4,7 @@ import React from 'react'
 import {Container, Card} from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-const SignUpForm = () => {
+const SignUpForm = ({backendURL}) => {
 
 
     return(
