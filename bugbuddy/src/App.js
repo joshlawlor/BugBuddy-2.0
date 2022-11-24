@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       
-      <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
+      <Navbar sticky='top' collapseOnSelect expand='lg' bg='dark' variant='dark'>
 
         <Container>
           

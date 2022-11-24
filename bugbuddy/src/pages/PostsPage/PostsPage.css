@@ -1,0 +1,30 @@
+.postsMain {
+    height: 93.5vh;
+    border: 3px solid red;
+    height: 100vh;
+}
+
+.makePost {
+    border: 3px solid green;
+    border-radius: 25px;
+    margin-top: 2vh;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.postsList {
+    border: 3px solid blue;
+    margin-top: 10vh;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+

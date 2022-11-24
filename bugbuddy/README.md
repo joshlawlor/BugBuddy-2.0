@@ -1,3 +1,41 @@
+# CURRENT GOALS
+
+[] Style posts page so each post has it's own card that leads to post details page
+    [] Include a sort/filter bar?
+[] Style Create Posts form w/ media import availability and textarea for debugging
+[] Style Post Details page 
+    [] Include section for comments
+
+
+# STRETCH GOALS (when adding functionality code)
+[] Ability to sort/filter posts based on date create/category/language
+
+
+
+# BACKEND GOALS
+
+[] Post model should include 
+    [] Author
+    [] Category/Language (Make this a dropdown for user input)
+    [] Title
+    [] Content
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
