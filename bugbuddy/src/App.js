@@ -12,11 +12,11 @@ import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 //PAGES
 import PostsPage from './pages/PostsPage/PostsPage';
+import CreatePage from './pages/CreatePage/CreatePage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import LoginForm from './components/LoginForm/LoginForm'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import ProfilePage from './pages/ProfilePage/ProfilePage';
-
 import tokenService from './utils/tokenService';
 import userServices from './utils/userServices'
 import { useNavigate } from 'react-router-dom'
@@ -40,6 +40,7 @@ function App() {
         userServices.logout()
         navigate('/')
       }
+
       return (
         <div className="App">
           
@@ -62,6 +63,7 @@ function App() {
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
             <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
             <Route path='/login' element={<LoginForm backendURL={backendURL}/>}/>
             <Route path='/signup' element={<SignUpForm backendURL={backendURL}/>}/>
             <Route path='/profile' element={<ProfilePage backendURL={backendURL}/>}/>
@@ -95,6 +97,7 @@ function App() {
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
             <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
             <Route path='/login' element={<LoginForm backendURL={backendURL}/>}/>
             <Route path='/signup' element={<SignUpForm backendURL={backendURL}/>}/>
           </Routes>

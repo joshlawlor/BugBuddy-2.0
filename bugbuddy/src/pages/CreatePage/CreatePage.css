@@ -1,0 +1,22 @@
+.createMain {
+    /* border: 3px solid red; */
+    height: 60vh;
+    width: 80vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 10vh;
+}
+
+.createTitle {
+    /* border: 3px solid green; */
+    margin-top: 1vh;
+}
+
+.createForm{
+    border: 3px solid  aliceblue;
+    margin-top: 2vh;
+    height: 48vh;
+    border-radius: 25px;
+    background-color: aliceblue;
+}
