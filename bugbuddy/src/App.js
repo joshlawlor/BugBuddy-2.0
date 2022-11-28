@@ -2,6 +2,9 @@ import './App.css';
 import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import bug from './media/bug.png'
+import tokenService from './utils/tokenService';
+import userServices from './utils/userServices'
+import { useNavigate } from 'react-router-dom'
 
 //BOOTSTRAP
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -17,9 +20,8 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import LoginForm from './components/LoginForm/LoginForm'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import ProfilePage from './pages/ProfilePage/ProfilePage';
-import tokenService from './utils/tokenService';
-import userServices from './utils/userServices'
-import { useNavigate } from 'react-router-dom'
+import PostDetailsPage from './pages/PostDetailsPage/PostDetailsPage';
+
 
 
 const backendURL = 'http://localhost:4000'
@@ -63,6 +65,7 @@ function App() {
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
             <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts/:postId' element={<PostDetailsPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
             <Route path='/login' element={<LoginForm backendURL={backendURL}/>}/>
             <Route path='/signup' element={<SignUpForm backendURL={backendURL}/>}/>
@@ -97,6 +100,7 @@ function App() {
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
             <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts/:postId' element={<PostDetailsPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
             <Route path='/login' element={<LoginForm backendURL={backendURL}/>}/>
             <Route path='/signup' element={<SignUpForm backendURL={backendURL}/>}/>
