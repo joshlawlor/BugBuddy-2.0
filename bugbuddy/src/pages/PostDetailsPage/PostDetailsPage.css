@@ -1,0 +1,23 @@
+.detailMain {
+    border-radius: 25px;
+    background-color: lightgray;
+    padding: 10px;
+    height: 80vh;
+    margin-top: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 10px;
+}
+
+
+
+.post{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comments{
+    margin-top: 10px;
+
+}

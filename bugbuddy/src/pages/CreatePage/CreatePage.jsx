@@ -57,6 +57,7 @@ const CreatePage = ({ backendURL, loggedIn }) => {
                 </Container>
 
                 <Container className="createForm">
+                    <br/>
                     <h1>Make a Post</h1>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="title">

@@ -50,7 +50,7 @@ function App() {
     
             <Container>
               
-              <Navbar.Brand href='/'><img src={bug}/> BugBuddy</Navbar.Brand>
+              <Navbar.Brand href='/posts'><img href="/" src={bug}/> BugBuddy</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
               <Navbar.Collapse id='responsive-navbar-nav'>
                 <Nav className='me-auto'>
