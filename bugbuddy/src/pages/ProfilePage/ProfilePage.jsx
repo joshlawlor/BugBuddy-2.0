@@ -4,6 +4,10 @@ import './ProfilePage.css'
 import userServices from '../../utils/userServices'
 import tokenService from '../../utils/tokenService'
 
+//BOOTSTRAP
+import { Container, Card, ListGroup, Button } from "react-bootstrap";
+
+
 
 const ProfilePage = ({ backendURL }) => {
     const [userPosts, setUserPosts] = useState([])
@@ -58,27 +62,39 @@ const ProfilePage = ({ backendURL }) => {
     },
         [])
 
-    function refreshPost(){
+    function refreshPost() {
         window.location.reload(false)
     }
 
     return (
         <div>
-            <h1>Welcome {user.username}!</h1>
+            <div className="profileMain">
+                <Container className='post'>
+                    <Card style={{ width: '50rem', margin: '3px' }}>
+                        <Card.Header as="h3">Welcome {user.username}</Card.Header>
+                        <Card.Body>
+                            <Button onClick={refreshPost}>REFRESH POSTS</Button>
+                        </Card.Body>
+                    </Card>
+                </Container>
+                <Container className='comments'>
+                    {userPosts.map(post => {
+                        return (
+                            <Card className='postCard'>
+                                <Card.Subtitle className="mb-2 text-muted">Created:{post.createdAt} </Card.Subtitle>
 
-            <h2> Your Posts:</h2>
-            <button onClick={refreshPost}>REFRESH POSTS</button>
+                                <Card.Title>{post.title}</Card.Title>
+                                <Button a href={`/posts/${post._id}/edit`}>View Post</Button>
+                                {/* <footer className='mb-1text-muted'>{post.createdAt}</footer> */}
+                            </Card>
+                        )
+                    })}
 
-            <ul>
-                {userPosts.map(post => {
-                    return (
-                        <ul>
-                            <li>{post.title}</li>
-                        </ul>
-                    )
-                })}
-            </ul>
+                </Container>
+            </div>
         </div>
+
+
     )
 
 }

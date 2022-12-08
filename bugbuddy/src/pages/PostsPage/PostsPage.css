@@ -1,7 +1,8 @@
 .postsMain {
     height: 93.5vh;
     /* border: 3px solid red; */
-    height: 90vh;
+      overflow: auto;
+
 }
 
 .makePost {
@@ -19,15 +20,16 @@
 
 
 .postsList {
-    height: 60vh;
     border: 3px solid aliceblue;
     border-radius: 25px;
     background-color: aliceblue;
     margin-top: 2vh;
     margin-left: 15px;
     margin-right: 15px;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    /* flex-direction: column; */
+
+
 
 }
 

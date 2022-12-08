@@ -21,6 +21,7 @@ import LoginForm from './components/LoginForm/LoginForm'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import PostDetailsPage from './pages/PostDetailsPage/PostDetailsPage';
+import EditPostPage from './pages/EditPostPage/EditPostPage';
 
 
 
@@ -65,6 +66,7 @@ function App() {
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
             <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts/:postId/edit' element={<EditPostPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/:postId' element={<PostDetailsPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
             <Route path='/login' element={<LoginForm backendURL={backendURL}/>}/>

@@ -1,0 +1,14 @@
+.profileMain {
+    margin-top: 2vh;
+    width: 90vw;
+    border: 3px solid lightgreen;
+    background-color: aliceblue;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.postCard {
+    display: inline-block;
+    padding: 10px;
+    margin: 4px;
+}

@@ -16,7 +16,8 @@
 .createForm{
     border: 3px solid  aliceblue;
     margin-top: 2vh;
-    height: 48vh;
     border-radius: 25px;
     background-color: aliceblue;
+    display: inline-block;
+
 }

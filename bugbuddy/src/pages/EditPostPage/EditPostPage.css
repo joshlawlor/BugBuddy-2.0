@@ -1,0 +1,11 @@
+.editMain {
+    position: relative;
+    display: inline-block;
+    background-color: aliceblue;
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.editForm {
+    margin-top: 10px;
+}
