@@ -29,7 +29,6 @@ const EditPostPage = ({ backendURL }) => {
                     return response.json();
             })
             .then(response => {
-                console.log(response)
                 setPost([...response])
             })
     }
@@ -48,22 +47,21 @@ const EditPostPage = ({ backendURL }) => {
             method:"DELETE", headers: new Headers({'content-type': 'application/json', 'Authorization': `${userToken}`})
         })
         navigate('/profile')
-        // async function deletePost() {
-        //     let response = await axios.delete(`${backendURL}/posts/${postId}`, { headers: { Authorization: `${userToken}` } })
-        //     navigate('/posts')
-        // }
-        // deletePost()
     }
 
 
 
     //EDIT FUNCTIONALITY
     const editState = {
-        title: p.title,
+        title: `${p.title}`,
         content: p.content,
         category: p.category
     }
-    const [formData, setFormData] = useState(editState)
+    const [formData, setFormData] = useState(initialState)
+    
+    console.log('FORM DATA' , formData)
+
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value })
     }
@@ -80,6 +78,7 @@ const EditPostPage = ({ backendURL }) => {
                 return response.json()
             })
             .then(response => {
+                navigate('/profile')
                 window.location.reload(false);
             })
     }

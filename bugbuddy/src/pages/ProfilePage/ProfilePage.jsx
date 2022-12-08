@@ -63,7 +63,7 @@ const ProfilePage = ({ backendURL }) => {
         [])
 
     function refreshPost() {
-        window.location.reload(false)
+        window.location.reload(true)
     }
 
     return (
@@ -72,9 +72,7 @@ const ProfilePage = ({ backendURL }) => {
                 <Container className='post'>
                     <Card style={{ width: '50rem', margin: '3px' }}>
                         <Card.Header as="h3">Welcome {user.username}</Card.Header>
-                        <Card.Body>
                             <Button onClick={refreshPost}>REFRESH POSTS</Button>
-                        </Card.Body>
                     </Card>
                 </Container>
                 <Container className='comments'>

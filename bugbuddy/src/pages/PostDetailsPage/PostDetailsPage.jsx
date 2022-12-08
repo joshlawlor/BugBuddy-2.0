@@ -44,15 +44,19 @@ const PostDetailsPage = ({ backendURL, loggedIn }) => {
             <div className="detailMain">
                 <Container className='post'>
                     <Card style={{ width: '80rem', margin: '3px' }}>
-                        <Card.Header as="h3">{p.title}</Card.Header>
+                        <Card.Header as="h3">{p.title}
+                        <Card.Subtitle className="mb-2 text-muted">Posted by:{p.author} </Card.Subtitle>
+                        </Card.Header>
+
                         <Card.Body>
-                            <Card.Subtitle className="mb-2 text-muted">Posted by:{p.author} {p.createdAt}</Card.Subtitle>
-                            <Card.Text className="mb-2 text-muted">Category:{p.category}</Card.Text>
+                            <Card.Subtitle className="mb-2 text-muted">Category:{p.category}</Card.Subtitle>
                             <br />
                             <Card>
                                 <Card.Text>{p.content}</Card.Text>
                             </Card>
                         </Card.Body>
+                        <Card.Footer size='sm' className='text-muted'>Created: {p.createdAt}</Card.Footer>
+
                     </Card>
                 </Container>
                 <Container className='comments'>
