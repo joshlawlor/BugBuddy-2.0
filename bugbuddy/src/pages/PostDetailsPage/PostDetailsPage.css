@@ -2,11 +2,11 @@
     border-radius: 25px;
     background-color: lightgray;
     padding: 10px;
-    height: 80vh;
     margin-top: 10px;
     margin-left: 5vw;
     margin-right: 5vw;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 
@@ -15,9 +15,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .comments{
     margin-top: 10px;
 
+}
+
+.comment{
+    margin: 20px;
 }

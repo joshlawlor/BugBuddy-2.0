@@ -137,12 +137,12 @@ const EditPostPage = ({ backendURL }) => {
                 </Card>
 
             </Container>
-            <Container className='comments'>
+            {/* <Container className='comments'>
                 <Card>
                     <Card.Header>Comments:</Card.Header>
                 </Card>
 
-            </Container>
+            </Container> */}
             <br/>
         </div>
     )
