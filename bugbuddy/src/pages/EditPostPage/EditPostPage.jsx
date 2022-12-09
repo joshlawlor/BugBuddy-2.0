@@ -16,7 +16,6 @@ const EditPostPage = ({ backendURL }) => {
         title: "",
         content: "",
         category: "",
-        comments: []
     }
     const [post, setPost] = useState([initialState])
     async function getPost() {
@@ -42,24 +41,20 @@ const EditPostPage = ({ backendURL }) => {
     //DELETE FUNCTIONALITY
     function handleDelete() {
         console.log('POST ID', postId)
-        fetch(`${backendURL}/posts/${postId}`, 
-        {
-            method:"DELETE", headers: new Headers({'content-type': 'application/json', 'Authorization': `${userToken}`})
-        })
+        fetch(`${backendURL}/posts/${postId}`,
+            {
+                method: "DELETE", headers: new Headers({ 'content-type': 'application/json', 'Authorization': `${userToken}` })
+            })
         navigate('/profile')
     }
 
 
 
     //EDIT FUNCTIONALITY
-    const editState = {
-        title: `${p.title}`,
-        content: p.content,
-        category: p.category
-    }
-    const [formData, setFormData] = useState(initialState)
-    
-    console.log('FORM DATA' , formData)
+
+    const [formData, setFormData] = useState()
+
+    console.log('FORM DATA', formData)
 
 
     const handleChange = (e) => {
@@ -78,23 +73,28 @@ const EditPostPage = ({ backendURL }) => {
                 return response.json()
             })
             .then(response => {
-                navigate('/profile')
                 window.location.reload(false);
             })
     }
 
-    
+
 
     return (
         <div className="editMain">
             <Container className='post'>
-                <Card style={{ width: '80rem', margin: '3px' }}>
+                <Card bg='light' style={{ width: '80rem', margin: '3px' }}>
                     <Card.Header as="h3">{p.title}</Card.Header>
                     <Card.Body>
                         <Card.Subtitle className="mb-2 text-muted">Posted by:{p.author} {p.createdAt}</Card.Subtitle>
                         <Card.Text className="mb-2 text-muted">Category:{p.category}</Card.Text>
                         <br />
                         <Card>
+                            <Card.Header>Summary</Card.Header>
+                            <Card.Text>{p.summary}</Card.Text>
+                        </Card>
+                        <br />
+                        <Card>
+                            <Card.Header>Code:</Card.Header>
                             <Card.Text>{p.content}</Card.Text>
                         </Card>
                     </Card.Body>
@@ -103,21 +103,27 @@ const EditPostPage = ({ backendURL }) => {
             </Container>
             <Container className="editForm">
 
-                <Card>
+                <Card bg='warning'>
                     <Card.Header as="h5" className='text-muted'>Edit Post</Card.Header>
                     <Card.Body>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="title">
                                 <Form.Label className='text-muted'>Post Title</Form.Label>
-                                <Form.Control  onChange={handleChange} defaultValue={p.title} placeholder="Title"/>
+                                <Form.Control onChange={handleChange} defaultValue={p.title} placeholder="Title" />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="summary">
+                                <Form.Label className='text-muted'>Summary</Form.Label>
+                                <Form.Control onChange={handleChange} as='textarea' rows={3} defaultValue={p.summary} placeholder={p.content} />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="content">
                                 <Form.Label className='text-muted'>Content</Form.Label>
-                                <Form.Control onChange={handleChange} as='textarea' rows={3} defaultValue ={p.content} placeholder={p.content} />
+                                <Form.Control onChange={handleChange} as='textarea' rows={3} defaultValue={p.content} placeholder={p.content} />
                             </Form.Group>
 
                             <Form.Group controlId="category">
+                            <Form.Label className='text-muted'>Category</Form.Label>
                                 <Form.Select className='text-muted' onChange={handleChange} aria-label="Category Select">
                                     <option>{p.category}</option>
                                     <option value='Javascript'>Javascript</option>
@@ -126,14 +132,14 @@ const EditPostPage = ({ backendURL }) => {
                                 </Form.Select>
                             </Form.Group>
                             <br />
-                           
+
                         </Form>
 
 
                     </Card.Body>
-                    <Button  onClick={handleSubmit} variant="primary" type="submit">
-                                Edit
-                            </Button>
+                    <Button onClick={handleSubmit} variant="success" type="submit">
+                        Edit
+                    </Button>
                 </Card>
 
             </Container>
@@ -143,7 +149,7 @@ const EditPostPage = ({ backendURL }) => {
                 </Card>
 
             </Container> */}
-            <br/>
+            <br />
         </div>
     )
 

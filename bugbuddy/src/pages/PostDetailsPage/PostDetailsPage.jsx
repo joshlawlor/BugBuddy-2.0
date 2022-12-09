@@ -55,8 +55,13 @@ const PostDetailsPage = ({ backendURL, loggedIn }) => {
 
                         <Card.Body>
                             <Card.Subtitle className="mb-2 text-muted">Category:{p.category}</Card.Subtitle>
+                            <Card>
+                                <Card.Header as='h5'>Summary</Card.Header>
+                                <Card.Text>{p.summary}</Card.Text>
+                            </Card>
                             <br />
                             <Card>
+                            <Card.Header as='h5'>Code:</Card.Header>
                                 <Card.Text>{p.content}</Card.Text>
                             </Card>
                         </Card.Body>
@@ -104,7 +109,10 @@ const PostDetailsPage = ({ backendURL, loggedIn }) => {
                             <Card.Subtitle className="mb-2 text-muted">Category:{p.category}</Card.Subtitle>
                             <br />
                             <Card>
-                                <Card.Text>{p.content}</Card.Text>
+                                <Card.Text >{p.summary}</Card.Text>
+                            </Card>
+                            <Card>
+                                <Card.Text  rows={3}>{p.content}</Card.Text>
                             </Card>
                         </Card.Body>
                         <Card.Footer size='sm' className='text-muted'>Created: {p.createdAt}</Card.Footer>
@@ -112,8 +120,19 @@ const PostDetailsPage = ({ backendURL, loggedIn }) => {
                     </Card>
                 </Container>
                 <Container className='comments'>
-                    <Card>
+                    <Card bg='success'>
                         <Card.Header>Comments:</Card.Header>
+                        {p.comments.map(comment => {
+                            return (
+                                    <Card bg="secondary" className="comment">
+                                        <Card.Header>By: {comment.author}</Card.Header>
+                                        <Card.Body>{comment.content}</Card.Body>
+                                 </Card>
+                            )
+                                   
+                        })}
+
+
                     </Card>
 
                 </Container>

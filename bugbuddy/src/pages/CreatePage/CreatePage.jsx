@@ -9,13 +9,21 @@ import { Container, Form, Button } from 'react-bootstrap'
 
 const CreatePage = ({ backendURL, loggedIn }) => {
     let navigate = useNavigate();
+
+    
     const [auth, setAuth] = useState();
     const userToken = tokenService.getToken()
+    const user = tokenService.getUserFromToken()
+
+ 
 
     const initialState = {
         title: "",
+        summary: "",
         content: "",
-        category: ""
+        category: "",
+        author: `${user.username}`,
+        userId: `${user._id}`
     }
 
     const [formData, setFormData] = useState(initialState)
@@ -26,7 +34,7 @@ const CreatePage = ({ backendURL, loggedIn }) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-
+        console.log(formData)
         fetch(`${backendURL}/posts/`, {
             method: "POST", body: JSON.stringify(formData),
             headers: new Headers({ 'content-type': 'application/json', 'Authorization': `${userToken}` })
@@ -65,9 +73,15 @@ const CreatePage = ({ backendURL, loggedIn }) => {
                             <Form.Control onChange={handleChange} placeholder="API error..." />
                         </Form.Group>
 
+                        <Form.Group className="mb-3" controlId="summary">
+                            <Form.Label>Summary</Form.Label>
+                            <Form.Control onChange={handleChange} as='textarea' rows={2} placeholder="Explain the problem you're having" />
+                        </Form.Group>
+
+
                         <Form.Group className="mb-3" controlId="content">
                             <Form.Label>Content</Form.Label>
-                            <Form.Control onChange={handleChange} as='textarea' rows={3} placeholder="I've got a bug..." />
+                            <Form.Control onChange={handleChange} as='textarea' rows={3} placeholder="Paste your code here:" />
                         </Form.Group>
 
                         <Form.Group controlId="category">
@@ -77,8 +91,10 @@ const CreatePage = ({ backendURL, loggedIn }) => {
                                 <option value='Python'>Python</option>
                                 <option value='CSS'>CSS</option>
                             </Form.Select>
+
                         </Form.Group>
 
+                    
 
                         <br />
                         <Button variant="primary" type="submit">

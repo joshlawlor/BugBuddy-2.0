@@ -43,3 +43,8 @@
     border-radius: 25px;
     /* width: 50vh; */
 }
+
+.postBox{
+    margin-top: 10px;
+    width: auto;
+}

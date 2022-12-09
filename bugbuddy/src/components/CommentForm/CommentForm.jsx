@@ -43,15 +43,11 @@ const CommentForm = ({ post, backendURL, user }) => {
 
                 <Form onSubmit={handleSubmit}>
                             <Form.Group className='mb-3' controlId='content'>
-                                <Form.Label>Comment as {user.username}</Form.Label>
+                                <Form.Label>Comment as <a href='/profile'>{user.username}</a></Form.Label>
                             <Form.Control onChange={handleChange} as='textarea' rows={5} placeholder="Any insight?" />
                             </Form.Group>
-                            <Form.Group as={Row} controlId='author'>
-                                <Form.Label column sm="3">Comment as:</Form.Label>
-                                <Col sm="5">
-                                <Form.Control  plaintext readOnly value={user.username} onChange={handleChange} placeholder={`By ${user.username}`}></Form.Control>
-
-                                </Col>
+                            <Form.Group  className='authorBox' as={Row} controlId='author'>
+                                <Form.Control plaintext hidden value={user.username} onChange={handleChange} placeholder={`By ${user.username}`}></Form.Control>
                             </Form.Group>
                            <Button variant="success" type='submit'>Comment</Button>
                         </Form>

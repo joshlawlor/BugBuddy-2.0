@@ -37,7 +37,7 @@ function App() {
 
     if(tokenService.loginCheck() == true){
       const loggedIn = "true"
-      console.log(`${user} Logged In`, loggedIn)
+      console.log(`${user.username} Logged In`, loggedIn)
 
       function handleLogout() {
         userServices.logout()
@@ -65,7 +65,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
-            <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts' element={<PostsPage loggedIn={loggedIn} backendURL={backendURL}/>}/>
             <Route path='/posts/:postId/edit' element={<EditPostPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/:postId' element={<PostDetailsPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
@@ -101,7 +101,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<WelcomePage/>}/>
-            <Route path='/posts' element={<PostsPage backendURL={backendURL}/>}/>
+            <Route path='/posts' element={<PostsPage loggedIn={loggedIn} backendURL={backendURL}/>}/>
             <Route path='/posts/:postId' element={<PostDetailsPage backendURL={backendURL} loggedIn={loggedIn}/>}/>
             <Route path='/posts/create' element={<CreatePage backendURL={backendURL} loggedIn= {loggedIn}/>}/>
             <Route path='/login' element={<LoginForm backendURL={backendURL}/>}/>
