@@ -1,10 +1,10 @@
 import tokenService from "./tokenService";
 
-function logout(){
+const logout = function(){
     localStorage.removeItem("token")
 }
 
-function getUser(){
+const getUser = function(){
     return tokenService.getUserFromToken
 }
 
