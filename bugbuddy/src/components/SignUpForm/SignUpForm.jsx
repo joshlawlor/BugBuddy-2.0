@@ -17,7 +17,7 @@ const SignUpForm = ({ backendURL }) => {
     }
 
     async function testUserCred() {
-        await fetch(backendURL + '/users/signup',
+        await fetch(`${backendURL}/users/signup`,
             {
                 method: 'POST',
                 body: JSON.stringify(userCred),
@@ -69,7 +69,7 @@ const SignUpForm = ({ backendURL }) => {
                                 </Form.Text>
                             </Form.Group>
 
-                            <Form.Group classname='mb-3' controlId='email'>
+                            <Form.Group className='mb-3' controlId='email'>
                                 <Form.Label>Email Address</Form.Label>
                                 <Form.Control onChange = {handleChange} type='email' placeholder='Enter Email' />
                                 <Form.Text size='sm' className='text-muted'>

@@ -25,7 +25,7 @@ import EditPostPage from './pages/EditPostPage/EditPostPage';
 
 
 
-const backendURL = 'http://localhost:4000'
+const backendURL = 'https://bugbuddy2.herokuapp.com'
 
 
 function App() {
