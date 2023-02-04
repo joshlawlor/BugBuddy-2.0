@@ -11,7 +11,7 @@
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -37,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "[] Style posts page so each post has it's own card that leads to post details page\r     [] Include a sort/filter bar?\r [] Style Create Posts form w/ media import availability and textarea for debugging\r [] Style Post Details page \r     [] Include section for comments",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
